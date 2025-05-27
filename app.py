@@ -7,7 +7,7 @@ import tensorflow as tf
 import joblib
 
 # Load model and scaler
-model = tf.keras.models.load_model('diabetes_model.keras')
+model = tf.keras.models.load_model('diabetes_model.h5')
 scaler = joblib.load('scaler.pkl')
 
 # Load dataset
