@@ -9,7 +9,7 @@ import joblib
 # Load model and scaler
 import os
 
-model_path = "diabetes_model.h5"
+model_path = "diabetes_model.keras"
 if os.path.exists(model_path):
     try:
         model = tf.keras.models.load_model(model_path)
