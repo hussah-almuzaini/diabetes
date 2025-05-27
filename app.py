@@ -7,7 +7,21 @@ import tensorflow as tf
 import joblib
 
 # Load model and scaler
-model = tf.keras.models.load_model('diabetes_model.h5')
+import os
+
+model_path = "diabetes_model.h5"
+if os.path.exists(model_path):
+    try:
+        model = tf.keras.models.load_model(model_path)
+    except Exception as e:
+        st.warning("⚠️ Error loading the model. Check if it's compatible or re-export it.")
+        st.stop()
+else:
+    st.warning("⚠️ Model file not found.")
+    st.stop()
+
+
+
 scaler = joblib.load('scaler.pkl')
 
 # Load dataset
